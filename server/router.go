@@ -19,6 +19,7 @@ func NewRouter() *gin.Engine {
 		auth.Use(middleware.AuthRequired())
 		{
 			auth.GET("posts", api.Posts)
+			auth.GET("users/me", api.User)
 		}
 	}
 	return r
